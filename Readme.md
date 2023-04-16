@@ -1,8 +1,16 @@
 # Modular Exponentiation Tool
 
-## Introduction
+## Author
 
-This project implements a command-line modular exponentiation calculator in Rust, capable of computing `x^y mod m` for given non-negative `x` and `y`, and positive `m`. The program is designed to handle large numbers efficiently, and it has been tested for correctness and performance.
+Prachi Kashyap
+
+## Project Name
+
+Command-line Modular Exponentiation Tool
+
+## Description
+
+This project implements a command-line tool for calculating the modular exponentiation of x raised to y modulo m using Rust. The goal is to efficiently compute the result even for large numbers without causing an overflow.
 
 ## Implementation
 
@@ -27,7 +35,13 @@ The main function modexp(x: u64, y: u64, m: u64) -> u64 calculates the modular e
 
 The main function collects command-line arguments, checks for the correct number of arguments, and parses them as `u64` values using the `parsenum()` function. It then calls `modexp()` with the parsed values and prints the result to the standard output.
 
-## Tests
+## Challenges and Outcomes
+
+The main challenge faced during the development was handling large numbers and avoiding overflow. The use of u128 type for intermediate calculations helped overcome this challenge.
+
+Another challenge was handling edge cases and ensuring the correctness of the algorithm. This was addressed by writing unit tests for the `modexp()` function with a variety of inputs, including some large numbers.
+
+## Testing
 
 The program is tested using the following test cases:
 
@@ -35,6 +49,12 @@ Large prime numbers and large exponents.
 Edge cases involving the largest prime less than 2\*\*64.
 Examples from modular-exponentiation-for-large-numbers.
 The tests have been carefully crafted to ensure the correctness and efficiency of the implemented algorithm.
+
+## Usage
+
+To use the command-line tool, compile the Rust code and run it with the following syntax:
+
+cargo run 2 20 17
 
 ## References
 

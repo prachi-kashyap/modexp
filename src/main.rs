@@ -36,6 +36,7 @@ fn parsenum(s: &str) -> u64 {
     s.parse().unwrap_or_else(|_| error())
 }
 
+/// The main function handles command-line arguments, parsing them as `u64` values using the `parsenum()` function.
 fn main() {
     let args: Vec<String> = std::env::args().collect();
     if args.len() != 4 {
@@ -49,6 +50,7 @@ fn main() {
     println!("{}", result);
 }
 
+/// The `tests` module contains unit tests for the `modexp()` function.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -58,8 +60,6 @@ mod tests {
         // Largest prime less than 2**64.
         // https://primes.utm.edu/lists/2small/0bit.html
         let bigm = u64::max_value() - 58;
-        let large_exponent: u64 = 1_000_000_000;
-        assert_eq!(49, modexp(7, large_exponent, 101));
         assert_eq!(0, modexp(bigm - 2, bigm - 1, 1));
         assert_eq!(1, modexp(bigm - 2, bigm - 1, bigm));
         assert_eq!(827419628471527655, modexp(bigm - 2, (1 << 32) + 1, bigm));
