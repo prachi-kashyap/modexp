@@ -56,6 +56,8 @@ To use the command-line tool, compile the Rust code and run it with the followin
 
 cargo run 2 20 17
 
+Output - 16
+
 ## References
 
 1. https://rob.co.bb/posts/2019-02-10-modular-exponentiation-in-rust/
